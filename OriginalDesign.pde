@@ -1,6 +1,13 @@
 void setup()
 {
   size(500, 500);
+  color_value = color_value + 10;
+  value = value + 30;
+  if (color_value > 255) {
+    color_value = 0;
+  }
+  if (value > 700) {
+    value = 0;
 }
 
 int color_value = 255;
@@ -8,23 +15,32 @@ int value = 0;
 
 void draw()
 {
-  fill(color_value, color_value, color_value);
-  ellipse(250, 250, value, value)
+  black();
+  delay(500);
+  white();
+  black();
 }
 
-void mouseMoved() 
-{
-  color_value = color_value + 10;
-  if (color_value > 255) {
-    color_value = 0;
-  }
+void black() {
+  fill(0, 0, 0);
+  ellipse(250, 250, value, value);
 }
 
-void mouseMoved() 
-{
-  value = value + 1;
-  if (value > 700) {
-    value = 0;
-  }
+void white() {
+  fill(255, 255, 255);
+  ellipse(250, 250, value, value);
 }
+
+// void mouseClicked() 
+// {
+//   color_value = color_value + 10;
+//   value = value + 30;
+//   if (color_value > 255) {
+//     color_value = 0;
+//   }
+//   if (value > 700) {
+//     value = 0;
+//   }
+// }
+
 
