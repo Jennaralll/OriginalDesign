@@ -1,4 +1,4 @@
-int value = 0;
+int value = 400;
  
 void setup()
 {
@@ -8,27 +8,31 @@ void setup()
 
 void black() 
 {
-  fill(0, 0, 0, 10);
+  fill(0, 0, 0);
   ellipse(250, 250, value, value);
-  value = value + 1;
+  value = value - 1;
 }
 
 void white() 
 {
-
-  fill(255, 255, 255, 10);
+  fill(255, 255, 255);
   ellipse(250, 250, value, value);
-  value = value + 1;
+  value = value - 1;
 }
 
 void draw()
 {
-  for (int i=1; i<20; i++)
+  for (int i=5; i>=5; i--)
   {
-	white();
-	black();
-
+    white();
+    delay(30);
+    black();
+    delay(30);
+    white();
+    delay(30);
+    black();
   }
+  
   // for (int i =1; i<20; i++)
   // {
   // 	delay(25);
